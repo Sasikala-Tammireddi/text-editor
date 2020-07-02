@@ -1,0 +1,7 @@
+{
+  "name": "text-editor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

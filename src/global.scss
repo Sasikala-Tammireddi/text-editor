@@ -1,0 +1,71 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+app-add-note {
+  height: 100%;
+}
+
+rich-text {
+  [contenteditable="true"] {
+    -webkit-user-select: auto !important;
+    padding: 2px;
+    margin: 2px;
+    border: 1px solid #bbb;
+    overflow-x: scroll;
+    overflow-y: auto;
+    word-wrap: normal;
+    height: 40vh;
+    img {
+      padding-left: 2px;
+      max-width: 95%;
+    }
+    background-color: #fff;
+    &:empty:before {
+      content: attr(data-placeholder-text);
+      display: block;
+      color: lightgrey;
+      font-weight: bold;
+    }
+  }
+  div.decorator {
+    background: white;
+    margin: 5px 1px 5px 1px;
+    text-align: center;
+    button {
+      background: white;
+      color: #000;
+      font-size: 16px;
+      height: 35px;
+      min-width: 30px;
+      padding: 4px;
+      margin:4px;
+    }
+    .button-active {
+      border: 1px solid white;
+    }
+  }
+}

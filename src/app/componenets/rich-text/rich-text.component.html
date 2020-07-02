@@ -1,0 +1,101 @@
+<!-- <div class="rich-text">
+  <div #decorate class="decorator">
+    <ion-buttons start [hidden]="!showDecorator && options.canClose">
+      <ion-button [hidden]="!options.undo" data-command="undo">
+        <ion-icon name="arrow-undo"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.redo" data-command="redo">
+        <ion-icon name="arrow-redo"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.bold" data-command="bold">
+        <ion-icon src="assets/icon/bold.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.italic" data-command="italic">
+        <ion-icon src="assets/icon/italic.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.underline" data-command="underline">
+        <ion-icon src="assets/icon/underline.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.strikethrough" data-command="strikethrough">
+        <ion-icon src="assets/icon/strikethrough.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.largeText" data-command="fontSize|6"><span style="font-size: 1.5em;">A</span>
+      </ion-button>
+      <ion-button [hidden]="!options.largeText || !options.smallText" data-command="removeFormat"><span
+          style="font-size: 1.0em;">A</span></ion-button>
+      <ion-button [hidden]="!options.smallText" data-command="fontSize|1"><span style="font-size: 0.6em;">A</span>
+      </ion-button>
+      <ion-button [hidden]="!options.alignLeft" data-command="justifyLeft">
+        <ion-icon src="assets/icon/align-left.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.alignCenter" data-command="justifyCenter">
+        <ion-icon src="assets/icon/align-center.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.alignRight" data-command="justifyRight">
+        <ion-icon src="assets/icon/align-right.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.justify" data-command="justifyFull">
+        <ion-icon src="assets/icon/align-justify.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.lineJump" data-command="insertHorizontalRule">
+        <ion-icon name="return-left"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.orderedList" data-command="insertOrderedList">
+        <ion-icon src="assets/icon/list-ol.svg"></ion-icon>
+      </ion-button>
+      <ion-button [hidden]="!options.unorderedList" data-command="insertUnorderedList">
+        <ion-icon src="assets/icon/list-ul.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDecorator()" *ngIf="options.canClose" class="ion-float-right" color="primary">
+        <ion-icon [name]="showDecorator ? 'close' : 'create'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </div>
+
+
+  <div #styler text-right>
+
+
+  </div>
+
+  
+  <ion-textarea #editor contenteditable="true" style="-webkit-user-select:text; user-select:text;" class="maineditor"
+    tappable [placeholder]="placeholderText">
+
+  </ion-textarea>
+
+</div>
+
+-->
+
+<div #styler>
+
+</div>
+
+<div #editor contenteditable="true" class="maineditor" tappable [attr.data-placeholder-text]="getPlaceholderText()">
+</div>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand -->
+<div #decorate class="decorator">
+    <button data-command="bold"><strong>B</strong></button>
+    <button data-command="italic"><i>I</i></button>
+    <button data-command="underline"><u>U</u></button> &nbsp;
+    <button data-command="fontSize|6"><span style="font-size: 1.5em;">A</span></button>
+    <button data-command="removeFormat"><span style="font-size: 1.0em;">A</span></button>
+    <button data-command="fontSize|1"><span style="font-size: 0.6em;">A</span></button> &nbsp;
+    <button data-command="formatBlock|<h1>">H1</button>
+    <button data-command="formatBlock|<h2>">H2</button>
+    <button data-command="formatBlock|<p>">Normal</button> &nbsp;
+    <button data-command="justifyLeft">Left</button>
+    <button data-command="justifyCenter">Center</button>
+    <button data-command="justifyRight">Right</button>
+    <button data-command="justifyFull">Full</button> &nbsp;
+    <button data-command="insertHorizontalRule">HR</button>
+    <button data-command="insertOrderedList">OL</button>
+    <button data-command="insertUnorderedList">UL</button>
+
+</div>

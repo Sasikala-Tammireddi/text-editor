@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Uploaded Files</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item *ngFor="let file of listOfFiles;let i=index">
+          <ion-label>
+            <h3>{{file.name}}</h3>
+            <p>{{file.fullPath}}</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="success" (click)="downloadFile(file)">
+              <ion-icon slot="icon-only" name="arrow-down-circle-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="medium" (click)="deleteFile(file.name)">
+              <ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
